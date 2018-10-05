@@ -26,8 +26,9 @@ import frc.team7190.subsystems.ExampleSubsystem;
 // If you rename or move this class, update the build.properties file in the project root
 public class Robot extends TimedRobot 
 {
-
-    public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+    //Creates framework for new command (uncomment to create new one)
+    //public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+    
     public static final DriveTrain_Subsystem DriveTrain = new DriveTrain_Subsystem();
     public static OI oi;
 
@@ -42,6 +43,7 @@ public class Robot extends TimedRobot
     public void robotInit() 
     {
         oi = new OI();
+        //Allows the driver to select an autonmous function (WIP)
         chooser.addDefault("Default Auto", new ExampleCommand());
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
@@ -52,16 +54,18 @@ public class Robot extends TimedRobot
      * You can use it to reset any subsystem information you want to clear when
      * the robot is disabled.
      */
+    
+    //What are these?
     @Override
     public void disabledInit() 
     {
-        
+        //?
     }
 
     @Override
     public void disabledPeriodic() 
     {
-        Scheduler.getInstance().run();
+        Scheduler.getInstance().run(); //?
     }
 
     /**
@@ -78,6 +82,7 @@ public class Robot extends TimedRobot
     @Override
     public void autonomousInit() 
     {
+        //Runs the chosen autonomous command
         autonomousCommand = chooser.getSelected();
 
         /*
