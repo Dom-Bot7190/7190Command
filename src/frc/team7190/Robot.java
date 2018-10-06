@@ -56,6 +56,7 @@ public class Robot extends TimedRobot
      */
     
     //What are these?
+    //These may be useful in the future for certain mechanisms
     @Override
     public void disabledInit() 
     {
@@ -66,6 +67,8 @@ public class Robot extends TimedRobot
     public void disabledPeriodic() 
     {
         Scheduler.getInstance().run(); //?
+        //http://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/command/Scheduler.html
+        //TL;DR: It seems like it makes sure the right things are running and helps commands work properly
     }
 
     /**
