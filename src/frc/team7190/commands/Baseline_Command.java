@@ -2,44 +2,38 @@ package frc.team7190.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.team7190.Robot;
-import edu.wpi.first.wpilibj.Timer;
 
 public class Baseline_Command extends Command {
 
-    public Baseline_Command(){ requires(Robot.DriveTrain);}
-
-    private Timer m_timer = new Timer();
+    public Baseline_Command(){
+        super("Baseline_Command");
+        requires(Robot.DriveTrain);
+        setTimeout(3.0);
+    }
 
     @Override
     protected void initialize() {
-        m_timer.reset();
-        m_timer.start();
+        Robot.DriveTrain.DriveForwards();
     }
 
     @Override
     protected void execute() {
-        if (m_timer.get() < 3.0) {
-            //Why don't this bit work? halp
-            MainDrive.drive(0.7, 0.0); // drive forwards
-        } else {
-            MainDrive.stopMotor(); // stop robot
-        }
     }
 
     @Override
     protected boolean isFinished() {
-        return false;
+        return isTimedOut();
     }
 
     @Override
     protected void end()
     {
-
+        Robot.DriveTrain.Stop();
     }
 
     @Override
     protected void interrupted()
     {
-        super.interrupted();
+        end();
     }
 }
