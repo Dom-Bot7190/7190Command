@@ -15,6 +15,8 @@ package frc.team7190;
  */
 public class RobotMap 
 {
+
+    //Create right and left wheel variables
     public static final int
         Drive_Left = 0,
         Drive_Right = 1;

@@ -14,12 +14,15 @@ import edu.wpi.first.wpilibj.Joystick;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+
+    //Creates joystick on computer USB port 0
     Joystick Driver = new Joystick(0);
     public OI(){
 
     }
 
     public Joystick getDriverJoystick() {
+
         return Driver;
     }
 }
