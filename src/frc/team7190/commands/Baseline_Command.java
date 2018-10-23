@@ -9,7 +9,6 @@ public class Baseline_Command extends Command {
     public Baseline_Command(){
 
         //Sets drive time to 3 seconds
-        super("Baseline_Command");
         requires(Robot.DriveTrain);
         setTimeout(3.0);
     }

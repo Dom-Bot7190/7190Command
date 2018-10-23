@@ -6,6 +6,7 @@ import frc.team7190.Robot;
 public class ArcadeDrive_Command extends Command {
 
     public ArcadeDrive_Command(){
+
         requires(Robot.DriveTrain);
     }
 

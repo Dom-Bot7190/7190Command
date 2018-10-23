@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team7190.commands.Baseline_Command;
 import frc.team7190.subsystems.DriveTrain_Subsystem;
+import frc.team7190.subsystems.Flipper_Subsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,6 +28,7 @@ public class Robot extends TimedRobot
 {
 
     public static final DriveTrain_Subsystem DriveTrain = new DriveTrain_Subsystem();
+    public static final Flipper_Subsystem Flipper = new Flipper_Subsystem();
     public static OI oi;
 
     private Command autonomousCommand;
@@ -96,8 +98,8 @@ public class Robot extends TimedRobot
      * This function is called periodically during autonomous.
      */
     @Override
-    public void autonomousPeriodic() 
-    {
+    public void autonomousPeriodic() {
+
         Scheduler.getInstance().run();
     }
 
@@ -118,8 +120,8 @@ public class Robot extends TimedRobot
      * This function is called periodically during operator control.
      */
     @Override
-    public void teleopPeriodic() 
-    {
+    public void teleopPeriodic() {
+
         Scheduler.getInstance().run();
     }
 
