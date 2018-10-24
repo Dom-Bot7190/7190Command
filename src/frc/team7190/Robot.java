@@ -12,9 +12,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.team7190.commands.ExampleCommand;
+import frc.team7190.commands.Baseline_Command;
 import frc.team7190.subsystems.DriveTrain_Subsystem;
-import frc.team7190.subsystems.ExampleSubsystem;
+import frc.team7190.subsystems.Flipper_Subsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,10 +26,9 @@ import frc.team7190.subsystems.ExampleSubsystem;
 // If you rename or move this class, update the build.properties file in the project root
 public class Robot extends TimedRobot 
 {
-    //Creates framework for new command (uncomment to create new one)
-    //public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
-    
+
     public static final DriveTrain_Subsystem DriveTrain = new DriveTrain_Subsystem();
+    public static final Flipper_Subsystem Flipper = new Flipper_Subsystem();
     public static OI oi;
 
     private Command autonomousCommand;
@@ -43,8 +42,7 @@ public class Robot extends TimedRobot
     public void robotInit() 
     {
         oi = new OI();
-        //Allows the driver to select an autonmous function (WIP)
-        chooser.addDefault("Default Auto", new ExampleCommand());
+        chooser.addDefault("Baseline", new Baseline_Command());
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
     }
@@ -106,8 +104,8 @@ public class Robot extends TimedRobot
      * This function is called periodically during autonomous.
      */
     @Override
-    public void autonomousPeriodic() 
-    {
+    public void autonomousPeriodic() {
+
         Scheduler.getInstance().run();
     }
 
@@ -128,8 +126,8 @@ public class Robot extends TimedRobot
      * This function is called periodically during operator control.
      */
     @Override
-    public void teleopPeriodic() 
-    {
+    public void teleopPeriodic() {
+
         Scheduler.getInstance().run();
     }
 
