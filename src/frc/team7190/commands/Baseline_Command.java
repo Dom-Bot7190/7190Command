@@ -1,16 +1,18 @@
 package frc.team7190.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.team7190.Robot;
 
 //This command drives the robot across the baseline
 public class Baseline_Command extends Command {
 
+    private Timer driveTimer = new Timer();
+
     public Baseline_Command(){
 
         //Sets drive time to 3 seconds
         requires(Robot.DriveTrain);
-        setTimeout(3.0);
     }
 
     @Override
@@ -18,18 +20,24 @@ public class Baseline_Command extends Command {
 
         //Actually drives the robot
         Robot.DriveTrain.DriveForwards();
+        driveTimer.reset();
+        driveTimer.start();
     }
 
     @Override
     protected void execute() {
 
+        if (driveTimer.get() < 3.0) {
+            Robot.DriveTrain.DriveForwards();
+        } else {
+            Robot.DriveTrain.Stop();
+        }
     }
 
     @Override
     protected boolean isFinished() {
 
-        //What is this?
-        return isTimedOut();
+        return false;
     }
 
     @Override

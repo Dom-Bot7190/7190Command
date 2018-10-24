@@ -18,13 +18,8 @@ public class RobotMap
 
     //Create right and left wheel variables
     public static final int
+
         Drive_Left = 0,
         Drive_Right = 1,
         Flipper = 0;
-
-
-    // If you are using multiple modules, make sure to define both the port
-    // number and the module. For example you with a rangefinder:
-    // public static int rangefinderPort = 1;
-    // public static int rangefinderModule = 1;
 }
