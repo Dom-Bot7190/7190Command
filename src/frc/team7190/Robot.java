@@ -52,16 +52,21 @@ public class Robot extends TimedRobot
      * You can use it to reset any subsystem information you want to clear when
      * the robot is disabled.
      */
+    
+    //What are these?
+    //These may be useful in the future for certain mechanisms
     @Override
     public void disabledInit() 
     {
-        
+        //?
     }
 
     @Override
     public void disabledPeriodic() 
     {
-        Scheduler.getInstance().run();
+        Scheduler.getInstance().run(); //?
+        //http://first.wpi.edu/FRC/roborio/development/docs/java/edu/wpi/first/wpilibj/command/Scheduler.html
+        //TL;DR: It seems like it makes sure the right things are running and helps commands work properly
     }
 
     /**
@@ -78,6 +83,7 @@ public class Robot extends TimedRobot
     @Override
     public void autonomousInit() 
     {
+        //Runs the chosen autonomous command
         autonomousCommand = chooser.getSelected();
 
         /*
