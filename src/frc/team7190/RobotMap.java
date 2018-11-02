@@ -19,7 +19,7 @@ public class RobotMap
     //Create right and left wheel variables
     public static final int
 
-        Drive_Left = 0,
-        Drive_Right = 1,
+        Drive_Left = 1,
+        Drive_Right = 0,
         Flipper = 0;
 }
