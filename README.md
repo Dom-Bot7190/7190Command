@@ -33,7 +33,7 @@ Having everything in seperate files makes it easier to understand the flow of th
 
 ### The code starts with OI.java
 
-OI stands for **O**bject **I**nterface. Pretty self explanitory, it function as the interface between the physical objects and controls and the code. 
+OI stands for **O**bject **I**nterface. Pretty self explanitory, it functions as the interface between the physical objects and controls and the code. 
 
 When we plug the joystick in, this is the file it talks to as you can see in these lines here:
 ```java
